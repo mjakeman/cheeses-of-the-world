@@ -1,0 +1,27 @@
+main {
+    max-width: 1000px;
+    padding-bottom: 12vw;
+}
+
+.hero {
+    width: 1000px;
+    height: calc((1000px / 21) * 9);
+}
+
+.hero-overlay {
+    width: 1000px;
+    height: calc((1000px / 21) * 9);
+}
+
+.hero::after {
+    width: 1000px;
+    height: calc((1000px / 21) * 9);
+}
+
+.attribution {
+    padding: 30px 20px !important;
+}
+
+.splash-overlay {
+    width: 25%;
+}

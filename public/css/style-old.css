@@ -1,0 +1,1370 @@
+/* Cheese Website - Main Style Sheet */
+
+/* Local Fonts */
+@import url(fonts.css);
+
+/* REMOVE IMPORTS, USE LOCAL INSTEAD */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 400px;
+    background-image: url('../img/background2.png');
+    min-width: 650px;
+}
+
+.splash-container {
+    height: calc(100vh - 65px);
+    background-image: url("../img/splash.jpg"); /* http://www.brandpowder.com/wp-content/uploads/2014/05/s-cheeses.jpg */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.splash-container::after {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+    content: '';
+    box-sizing: border-box;
+}
+
+.splash-overlay img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.splash-overlay {
+    margin: auto;
+    width: 40%;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-75%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.splash-explore {
+    display: block;
+    border-radius: 4px;
+    border: 3px solid rgb(245,192,18);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Charis SIL', Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 40%;
+    transition: box-shadow 0.5s, background-color 0.5s;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.splash-explore:hover {
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    background-color: rgba(245,192,18,0.1);
+}
+
+.splash-explore span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: padding 0.5s;
+}
+
+.splash-explore span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.splash-explore:hover span {
+    padding-right: 25px;
+}
+
+.splash-explore:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.cheese-btn {
+    display: block;
+    color: #FFFFFF;
+    margin: auto;
+    margin-top: 20px;
+    padding: 8px 5px;
+    border-radius: 1px;
+    font-family: 'Roboto Slab', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    width: 150px;
+    background-color: rgb(245,192,18);
+    color: white;
+}
+
+.cheese-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: padding 0.5s;
+    font-size: 12pt;
+}
+
+.cheese-btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s ease-out;
+}
+
+.cheese-btn:hover span {
+    padding-right: 25px;
+}
+
+.cheese-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.global-header {
+    width: 100%;
+    /*background-color: #F8D152;*/
+    background-color: #dfaf11;
+    height: 65px;
+}
+
+.global-header nav {
+    height: calc(65px - 5px);
+    position: relative;
+    top: 5px;
+    background-color: rgb(245,192,18);
+}
+
+.global-header nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.global-header nav li {
+    display: inline-block;
+}
+
+.global-header nav li a {
+    padding: 15px 25px;
+    display: block;
+    text-decoration: none;
+    font-family: 'Dancing Script', 'Roboto Slab', Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    color: rgba(0,0,0,0.6);
+    transition: color 0.4s ease-out;
+}
+
+.global-header nav li a:hover {
+    color: rgba(0,0,0,1);
+}
+
+.global-header nav a.active {
+    background-color: #dfaf11;
+    transition: background 0.2s ease-out;
+    transition: text-shadow 0.2s ease-out;
+    text-shadow: none;
+    color: white;
+}
+
+.global-header nav li a.active:hover {
+    color: white;
+    text-shadow: 0 0 1px white;
+}
+
+main {
+    width: 80vw;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.hero {
+    width: 100%;
+    /* 21:9 Aspect Ratio */
+    height: calc((80vw / 21) * 9);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero::after {
+    z-index: 1;
+    position: absolute;
+    width: 80vw;
+    height: calc((80vw / 21) * 9);
+    content: '';
+    box-sizing: border-box;
+}
+
+.hero-overlay {
+    z-index: 2;
+    position: absolute;
+    width: 80vw;
+    height: calc((80vw / 21) * 9);
+    content: '';
+    box-sizing: border-box;
+}
+
+.about-hero {
+    background-image: url("../img/amsterdam_cheese_store.jpg")
+}
+
+.about-hero::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+}
+
+.about-hero-overlay {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Charis SIL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.about-hero-overlay p {
+    line-height: 20px;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.about-hero-overlay span {
+    font-size: 70%;
+}
+
+.about-hero-overlay h1 {
+    font-size: 20pt;
+    text-shadow: 1px 1px 2px black;
+}
+
+.newspaper {
+    padding: 10px 0;
+    column-count: 3;
+    column-gap: 40px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+}
+
+.newspaper h2 {
+    font-size: 16pt;
+}
+
+.newspaper h3 {
+    font-size: 14pt;
+    font-weight: normal;
+}
+
+.newspaper img {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.newspaper p {
+    font-size: 11pt;
+    line-height: 14pt;
+}
+
+main h1.section-header {
+    text-align: center;
+    font-size: 26pt;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact-container {
+    padding: 40px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact-left {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.contact-left h2 {
+    font-size: 16pt;
+    text-align: center;
+}
+
+.contact-left form input {
+    padding: 8px 5px;
+    width: 100%;
+    border: 1px solid rgb(245,192,18);
+    border-radius: 1px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    outline: 1px solid transparent;
+    transition: outline 0.4s ease-out, text-shadow 0.4s ease-out;
+    box-sizing: border-box;
+}
+
+.contact-left form textarea {
+    padding: 8px 5px;
+    width: 100%;
+    border: 1px solid rgb(245,192,18);
+    border-radius: 1px;
+    font-family: 'Roboto Slab', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10pt;
+    outline: 1px solid transparent;
+    transition: outline 0.4s ease-out;
+    box-sizing: border-box;
+    height: 180px;
+    resize: none;
+}
+
+.contact-left form textarea:focus {
+    outline: 1px solid rgb(245,192,18);
+}
+
+.contact-left form input:focus {
+    outline: 1px solid rgb(245,192,18);
+}
+
+.contact-left p {
+    text-align: right;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    color: rgb(245,192,18);
+    font-size: 90%;
+    margin-bottom: 10px;
+}
+
+.contact-left input[type="submit"] {
+    width: 30% !important;
+    float: right;
+}
+
+.btn-submit {
+    background-color: rgb(245,192,18);
+    color: white;
+    text-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    transition: text-shadow 0.4s ease-out;
+}
+
+.btn-submit:hover {
+    text-shadow: 0 0 2px white;
+}
+
+.contact-right {
+    width: 50%;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-right .info {
+    padding-bottom: 10px;
+    margin-left: 60px;
+    font-size: 10pt;
+    color: rgba(0,0,0,0.6);
+}
+
+.contact-right .info a {
+    color: rgba(0,0,0,0.6);
+}
+
+.contact-right .info::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    transform: translate(-45px, 2px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.contact-right .phone {
+    padding: 10px 0;
+}
+
+.contact-right .email {
+    padding: 15px 0;
+}
+
+.contact-right .location::before {
+    background-image: url("../img/round-location_on-24px.svg");
+    transform: translate(-45px, 10px);
+}
+
+.contact-right .phone::before {
+    background-image: url("../img/round-local_phone-24px.svg");
+}
+
+.contact-right .email::before {
+    background-image: url("../img/round-email-24px.svg");
+}
+
+.contact-right p.contact-description {
+    font-size: 11pt;
+    padding-top: 15px;
+}
+
+.global-footer {
+    background-color: #ffffff;
+}
+
+.global-footer nav {
+    padding: 40px 50px;
+    border-top: 1px solid rgb(245,192,18);
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+}
+
+.global-footer nav h3 {
+    font-size: 16pt;
+}
+
+.global-footer nav ul {
+    list-style-type: none;
+    display: block;
+    margin-right: 80px;
+}
+
+.global-footer nav ul li {
+    padding: 2px 0;
+}
+
+.global-footer nav ul li a {
+    color: rgba(0,0,0,0.8);
+}
+
+.global-footer .attribution {
+    background-color: rgb(245,192,18);
+    width: 100%;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 12pt;
+    color: rgba(0,0,0,0.6);
+    font-style: italic;
+}
+
+.global-footer .attribution p {
+    width: 60%;
+    display: block;
+}
+
+.global-footer .attribution p::after {
+    background-image: url("../img/logo_white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    width: 10vw;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+    right: 35px;
+    transform: translateY(-43px);
+    display: block;
+}
+
+.global-footer .copyright {
+    background-color: #dfaf11;
+    width: 100%;
+    padding: 5px 25px;
+    box-sizing: border-box;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    line-height: 12pt;
+}
+
+.global-footer .copyright p {
+    width: 60%;
+    display: block;
+}
+
+/* Store */
+.shop-hero {
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border: 1px solid #dddddd;
+}
+
+.shop-hero-overlay {
+    font-family: 'Charis SIL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    display: flex;
+}
+
+.shop-hero-img {
+    display: block;
+    width: 50%;
+    height: 100%;
+}
+
+.shop-hero-img img {
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.shop-hero-text {
+    display: inline-table;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.shop-hero-text-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.shop-hero-overlay p {
+    line-height: 20px;
+    font-size: 16px;
+    margin-top: -25px;
+}
+
+.shop-hero-overlay span.subtitle {
+    font-size: 18pt;
+    margin-left: -110px;
+}
+
+.shop-hero-overlay h1 {
+    font-size: 60pt;
+    margin-top: -40px;
+}
+
+/* Store Nav */
+.store-nav {
+    background-color: #ededed;
+    height: 40px;
+    line-height: 40px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 14pt;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.store-nav-left {
+    float: left;
+}
+
+.store-nav-left span {
+    color: rgb(245,192,18);
+    font-weight: bold;
+}
+
+.store-nav-right {
+    float: right;
+    transform: translateY(-40px);
+}
+
+.store-nav-centre {
+    margin: auto;
+    width: 300px;
+    text-align: center;
+}
+
+.store-nav-centre .link {
+    color: #f5af19;
+}
+
+/* Store Grid */
+.store-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.store-grid-item {
+    display: block;
+    width: 22%;
+    background-color: #fafafa;
+    border-radius: 4px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.store-grid-item:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+.store-grid-item header {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Use a 4:3 Aspect Ratio */
+    padding-top: 75%;
+    overflow: hidden;
+}
+
+.store-grid-item .desc {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.store-grid-item h1 {
+    margin-bottom: -5px;
+    margin-top: -3px;
+    font-size: 14pt;
+}
+
+.store-grid-item p {
+    font-style: italic;
+    font-size: 10pt;
+    color: rgba(0,0,0,0.8);
+}
+
+.store-filter-container {
+    width: 100%;
+    background-color: #ededed;
+    border: 1px solid #dddddd;
+    height: 40px;
+    line-height: 30px;
+}
+
+.store-filter {
+    width: 780px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.store-filter h2 {
+    padding: 0 20px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    font-weight: normal;
+    line-height: 40px;
+}
+
+.store-filter p {
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: rgba(0,0,0,0.6);
+    padding-left: 15px;
+    padding-right: 5px;
+    line-height: 40px;
+}
+
+.store-filter select {
+    width: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px;
+    background-color: #fafafa;
+    border: 1px solid rgb(245,192,18);
+    border-radius: 1px;
+}
+
+.store-filter input[type="submit"],
+.store-filter a {
+    border: none;
+    border-radius: 1px;
+    font-size: 10pt;
+    padding: 0 10px;
+    margin: 5px;
+    display: block;
+    box-sizing: border-box;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+}
+
+.store-filter a {
+    border: 1px solid rgb(245,192,18);
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.4s ease-out;
+}
+
+.store-filter a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.store-list-sort {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.store-list-sort form {
+    text-align: center;
+    line-height: 30px;
+}
+
+.store-list-sort form select {
+    border: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding: 2px 0;
+    font-size: 10pt;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(245,192,18);
+    height: 30px;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    border-bottom: 1px solid rgb(245,192,18);
+    margin: 0 10px;
+}
+
+.store-list-sort form select:hover {
+    color: #dfaf11;
+}
+
+.store-list-sort form input {
+    padding: 0px 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 1px;
+    color: rgba(0,0,0,0.8);
+    font-style: italic;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    margin-left: 2px;
+    transition: background 0.4s ease-out;
+    display: inline-block;
+}
+
+.store-list-sort form input:hover {
+    background: #dddddd;
+    cursor: pointer;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-list {
+    width: 80%;
+    padding: 50px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.cart-list table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,0.3);
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 11pt;
+}
+
+.cart-list th {
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.cart-list th, td {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.cart-list .thumb {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.cart-list .thumb img {
+    height: 120%;
+}
+
+.cart-list tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+.cart-list tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.cart-list th {
+    background-color: #ddd;
+}
+
+.php-var-button input:not([type = "submit"]) {
+    display: none;
+}
+
+.php-var-button input[type = "submit"] {
+    background-color: white;
+    border: 1px solid #f5af19;
+    border-radius: 2px;
+    color: rgba(0,0,0,0.87);
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding: 2px 6px;
+    transition: background 0.3s ease-out;
+}
+
+.php-var-button input[type = "submit"]:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.cart-list form#quantity {
+    margin-right: -20px;
+}
+
+.cart-list input#quantity {
+    display: inline-block !important;
+    background-color: white;
+    border: 1px solid #f5af19;
+    border-radius: 2px;
+    color: rgba(0,0,0,0.87);
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding: 2px 6px;
+    transition: outline 0.3s ease-out;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.cart-sidebar .php-var-button input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.accent {
+    background-color: #f5af19 !important;
+    color: white !important;
+}
+
+.damage {
+    background-color: #f12711 !important;
+    border: 1px solid #e31a1a !important;
+    color: white !important;
+}
+
+.accent:hover {
+    background-color: #dfaf11 !important;
+}
+
+.damage:hover {
+    background-color: #e31616 !important;
+}
+
+.cart-sidebar {
+    margin-bottom: 50px;
+    width: 20%;
+}
+
+.cart-sidebar table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #f5af19;
+    border-radius: 2px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    margin-bottom: 20px;
+}
+
+.cart-sidebar th {
+    border-bottom: 1px solid #dfaf11;
+}
+
+.cart-sidebar th, td {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.cart-sidebar img {
+    width: 100%;
+}
+
+.cart-sidebar tr:nth-child(even) {
+    background-color: white;
+}
+
+.cart-sidebar tr:nth-child(odd) {
+    background-color: #efefef;
+}
+
+.cart-sidebar .left {
+    text-align: left;
+}
+
+.cart-sidebar .right {
+    text-align: right;
+}
+
+.cart-sidebar th {
+    background-color: #f5af19;
+}
+
+.cart-sidebar h4 {
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.cart-sidebar .total {
+    background-color: #ddd !important;
+    font-weight: bold !important;
+}
+
+.order-message {
+    text-align: center;
+    font-family: "Charis SIL", Georgia;
+    font-size: 14px;
+    padding-bottom: 80px;
+    width: 60%;
+    margin: auto;
+}
+
+/* From Store Nav */
+.cart-text {
+    color: black;
+    text-decoration: none;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-main {
+    width: 75%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin: 20px;
+}
+
+.item-main h2 {
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+}
+
+.item-main img {
+    width: 100%;
+}
+
+.item-desc {
+    padding: 20px;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.item-quick-facts {
+    padding: 10px 20px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-left: none;
+    border-right: none;
+    background-color: #fafafa;
+}
+
+.item-quick-facts p {
+    padding: 0 15px;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    display: inline-block;
+}
+
+.item-sidebar {
+    width: 20%;
+    padding: 20px;
+    padding-top: 0;
+    box-sizing: border-box;
+    margin: 20px;
+    margin-top: 100px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+    height: 220px;
+}
+
+.item-sidebar h4 {
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+}
+
+.item-sidebar span {
+    font-size: 34px;
+}
+
+.item-sidebar p {
+    margin-top: -5px;
+    color: rgba(0,0,0,0.5);
+    padding-bottom: 20px;
+}
+
+.item-sidebar form {
+    width: 100%;
+}
+
+.item-sidebar input#quantity {
+    display: inline-block !important;
+    background-color: white;
+    border: 1px solid #f5af19;
+    border-radius: 2px;
+    color: rgba(0,0,0,0.87);
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding: 2px 6px;
+    box-sizing: border-box;
+    transition: outline 0.3s ease-out;
+    width: 100%;
+}
+
+.item-sidebar input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.store-grid-no-results {
+    background-color: #ddd;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 20px;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.admin-login {
+    background-color: #fafafa;
+    width: 40%;
+    margin: auto;
+    padding: 50px;
+    box-sizing: border-box;
+    border: 1px solid #f5af19;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+}
+
+.admin-login input {
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid #f5af19;
+    border-radius: 2px;
+}
+
+.admin-login h4 {
+    text-align: center;
+}
+
+.admin-login span p {
+    font-style: italic;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-top: -5px;
+}
+
+.admin-login input[type="submit"] {
+    background-color: #f5af19;
+    color: white;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+}
+
+.admin-login input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,0.3);
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    text-align: left;
+}
+
+.admin-table th {
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.admin-table th, td {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.admin-table td form {
+    display: inline-block !important;
+}
+
+.admin-table img {
+    width: 100%;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+.admin-table tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.admin-table th {
+    background-color: #ddd;
+}
+
+.admin-portal-container {
+    width: 100%;
+    margin: auto;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+}
+
+.admin-portal-container h2 {
+    text-align: center;
+}
+
+.admin-portal-container .admin-actions {
+    text-align: center;
+    color: rgba(0,0,0,0.87);
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+.admin-portal-container .admin-actions a {
+    color: rgba(0,0,0,0.87);
+}
+
+.admin-form {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 80px;
+    padding-top: 0;
+    box-sizing: border-box;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.admin-form h4 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.admin-form input {
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid #f5af19;
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.admin-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px 10px;
+    resize: none;
+    box-sizing: border-box;
+    border: 1px solid #f5af19;
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.admin-form select {
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid #f5af19;
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.admin-form input[type="submit"] {
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+    transition: background 0.4s ease-out;
+}
+
+.admin-form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.admin-form input[type="checkbox"] {
+    width: auto !important;
+}
+
+.admin-form label {
+    font-size: 12px;
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+input[type=checkbox] ~ #cheese-image {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ #cheese-image {
+    display: block;
+    margin-bottom: -20px;
+}
+
+input[type=checkbox] ~ .image-upload-helper {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .image-upload-helper {
+    display: block;
+}
+
+.admin-form input:disabled {
+    background-color: #eee;
+}
+
+.image-upload-helper {
+    text-align: center;
+    font-size: 11px;
+    padding-top: 10px;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.coverage {
+    margin-top: 20px;
+}
+
+.coverage h2 {
+    text-align: center;
+    font-family: "Charis SIL", Georgia, 'Times New Roman', Times, serif;
+}
+
+.coverage div {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.coverage div img {
+    display: block;
+    width: 33%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.recipes-hero {
+    background-image: url("../img/crackers_and_cheese.jpg")
+}
+
+.recipes-hero::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+}
+
+.recipes-hero-overlay {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Charis SIL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.recipes-hero-overlay p {
+    line-height: 20px;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.recipes-hero-overlay span {
+    font-size: 70%;
+}
+
+.recipes-hero-overlay h1 {
+    font-size: 20pt;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Recipes Section */
+.recipe-section {
+    margin: 50px 0;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+.recipe-section article {
+    width: 100%;
+    display: flex;
+}
+
+.recipe-section .recipe-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.recipe-section div {
+    width: 50%;
+}
+
+.recipe-content {
+    box-sizing: border-box;
+    padding: 40px;
+    font-family: 'Charis SIL', Georgia, 'Times New Roman', Times, serif;
+}
+
+.recipe-content ul, ol {
+    font-size: 12px;
+}
+
+.recipe-content ul.multi {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.recipe-content ul li {
+    list-style-position: inside;
+}
+
+.recipe-content ul li a {
+    color: rgb(245,192,18);
+}
+
+#recipe-1 .recipe-image {
+    background-image: url("../img/macaroni.jpg");
+}
+
+#recipe-2 .recipe-image {
+    background-image: url("../img/Kaspressknoedelsuppe.jpg");
+    background-position: center;
+}
+
+.recipe-attr {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 12px;
+    margin-top: -30px;
+}
