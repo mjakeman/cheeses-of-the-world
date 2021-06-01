@@ -1,10 +1,12 @@
 # Cheeses of the World
 *By Matthew Jakeman*
 
+A website about cheese 🧀. Created in 2018 for NCEA Level 2 Digital Technologies AS 91370 using PHP and HTML5/CSS3.
+
+![Splash Screen](screenshot.png)
+
 This text document is valid markdown. It provides an overview on how the
 website should be set up with a web server to operate correctly.
-
-
 
 ## Introduction
 The website is roughly divided into two main parts:
